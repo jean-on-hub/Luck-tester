@@ -8,7 +8,7 @@ while validation == 5:
     print("Welcome to the luck tester")
     game = input("Enter c to choose the coin game or d to choose the dice game ")
     while (game != "c" and game != "d"):
-            input("it must either be c or d ")
+           game = input("it must either be c or d ")
     if game == "c":
         print("you chose the coin game")
         validation = 0
@@ -55,7 +55,7 @@ while validation == 0:
     play_again = input("Do you want to play again? Enter y for yes and n for no ")
     print(play_again)
     while (play_again != "y" and play_again != "n"):
-        input("it must either be yes or no ")
+        play_again = input("it must either be yes or no ")
     if play_again == "y":
         continue
     elif play_again == "n":
@@ -70,7 +70,11 @@ while validation == 1:
             wrong_choice = True
             break
     while wrong_choice == False:
-        choice = input("It must be a number from 1 to 6")
+        choice = input("It must be a number from 1 to 6 ")
+        for n in range(1,7):
+            if choice == str(n):
+                wrong_choice = True
+                break
     if choice == "1":
         print("you chose one")
     elif choice == "2":
@@ -83,10 +87,13 @@ while validation == 1:
         print("you chose five")
     elif choice == "6":
         print("you chose six")
+
           
     #dice throw
     result=randint(1,6)
     #
+    if result:
+        print("the dice showed "+ str(result))
     if str(result) == choice:
         print("you guessed correctly")
         num_rounds +=1
@@ -100,7 +107,7 @@ while validation == 1:
     play_again = input("Do you want to play again? Enter y for yes and n for no ")
     print(play_again)
     while (play_again != "y" and play_again != "n"):
-        input("it must either be yes or no ")
+        play_again = input("it must either be yes or no ")
     if play_again == "y":
         continue
     elif play_again == "n":
